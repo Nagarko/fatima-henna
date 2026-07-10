@@ -1,236 +1,558 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Baby Henna | Beautiful Henna Artistry by Fatima Rabiu</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <title>Baby Henna · mobile elegance</title>
+  <!-- Bootstrap 5 + icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #fcf8f3;
+      overflow-x: hidden;
+      padding-bottom: 1rem;
+    }
+    /* custom scroll */
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: #f1e6da; }
+    ::-webkit-scrollbar-thumb { background: #b88b6b; border-radius: 20px; }
+
+    /* mobile-first typography */
+    .navbar-brand {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 1.5rem;
+      letter-spacing: 1px;
+      color: #f5e7da !important;
+    }
+    .navbar {
+      background: rgba(30, 20, 15, 0.85) !important;
+      backdrop-filter: blur(6px);
+      padding: 0.6rem 0;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    }
+    .nav-link {
+      font-weight: 400;
+      font-size: 0.9rem;
+      color: #f0e0d4 !important;
+      margin: 0 6px;
+      border-radius: 30px;
+      padding: 6px 16px;
+      transition: all 0.2s;
+    }
+    .nav-link:hover, .nav-link.active {
+      background: #b88b6b;
+      color: #fff !important;
+    }
+
+    /* hero – full viewport on mobile */
+    .hero-section {
+      min-height: 92vh;
+      background: linear-gradient(145deg, #2b1e17 0%, #4d3427 100%);
+      padding: 2rem 1rem 3rem;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      border-radius: 0 0 40px 40px;
+      margin-bottom: 2rem;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+    }
+    .hero-section::before {
+      content: "✦";
+      position: absolute;
+      font-size: 14rem;
+      right: -40px;
+      bottom: -60px;
+      opacity: 0.06;
+      color: #dbbca5;
+      transform: rotate(10deg);
+      pointer-events: none;
+    }
+    .hero-section .sub-title {
+      background: rgba(255,215,190,0.15);
+      backdrop-filter: blur(4px);
+      padding: 8px 24px;
+      border-radius: 60px;
+      font-size: 0.8rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #e6cfbc;
+      display: inline-block;
+      margin-bottom: 1rem;
+      border: 1px solid rgba(255,215,190,0.15);
+    }
+    .hero-section h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.8rem;
+      font-weight: 700;
+      line-height: 1.1;
+      text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      margin-bottom: 0.5rem;
+      letter-spacing: 1px;
+    }
+    .hero-section .lead {
+      font-size: 1rem;
+      font-weight: 300;
+      max-width: 440px;
+      margin-left: auto;
+      margin-right: auto;
+      color: #e9dbd0;
+      line-height: 1.6;
+      padding: 0 0.5rem;
+    }
+    .btn-custom {
+      background: #b88b6b;
+      border: none;
+      color: #fff;
+      font-weight: 600;
+      padding: 12px 32px;
+      border-radius: 60px;
+      box-shadow: 0 8px 18px rgba(184, 139, 107, 0.4);
+      transition: all 0.2s ease;
+      letter-spacing: 0.5px;
+      font-size: 0.95rem;
+    }
+    .btn-custom:hover {
+      background: #a17558;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px rgba(184, 139, 107, 0.5);
+      color: #fff;
+    }
+    .btn-order {
+      background: #f0e3d8;
+      color: #3d2c21;
+      border-radius: 40px;
+      font-weight: 600;
+      padding: 10px 0;
+      border: 1px solid #dac6b8;
+      transition: all 0.2s;
+      font-size: 0.9rem;
+    }
+    .btn-order:hover {
+      background: #b88b6b;
+      color: #fff;
+      border-color: #b88b6b;
+    }
+
+    /* section titles */
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 2.2rem;
+      color: #2e1f17;
+    }
+    .title-line {
+      width: 70px;
+      height: 3px;
+      background: #b88b6b;
+      margin: 10px auto 0;
+      border-radius: 10px;
+    }
+    .section-title-left {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 2rem;
+      color: #2e1f17;
+    }
+
+    /* gallery cards – mobile friendly */
+    .design-card {
+      background: #fffcf8;
+      border-radius: 28px !important;
+      overflow: hidden;
+      transition: all 0.25s ease;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+      border: 1px solid rgba(200, 175, 158, 0.2);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    .design-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 35px rgba(80, 50, 30, 0.10);
+      border-color: #c9b09b;
+    }
+    .design-img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-bottom: 1px solid #eee3d9;
+      background: #f1e4d8;
+    }
+    .card-body {
+      padding: 1rem 0.8rem 1rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .card-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #2d1f17;
+      margin-bottom: 0.25rem;
+    }
+    .card-text {
+      font-size: 0.8rem;
+      color: #7d6b5d;
+      margin-bottom: 0.8rem;
+    }
+
+    /* about section */
+    .about-img-frame {
+      max-width: 220px;
+      margin: 0 auto;
+      padding: 8px;
+      background: linear-gradient(135deg, #dac2b2, #b58b73);
+      border-radius: 50%;
+      box-shadow: 0 20px 30px -8px rgba(80, 50, 30, 0.2);
+    }
+    .about-img-frame img {
+      width: 100%;
+      border-radius: 50%;
+      border: 4px solid #fff;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+    }
+
+    /* modal */
+    .modal-content {
+      border-radius: 36px 36px 28px 28px;
+      background: #fffaf5;
+      border: none;
+    }
+    .modal-header {
+      background: #3d2c21;
+      border-radius: 36px 36px 0 0;
+      padding: 1.2rem 1.5rem;
+      border-bottom: 0;
+    }
+    .modal-header .modal-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+    }
+    .modal-body {
+      padding: 1.5rem 1.2rem;
+    }
+    .modal-body img {
+      border-radius: 24px;
+      max-height: 180px;
+      object-fit: cover;
+      width: 100%;
+      background: #ede2d8;
+    }
+    .form-control, .form-control:focus {
+      border-radius: 40px;
+      border: 1px solid #dccfc4;
+      padding: 12px 18px;
+      font-size: 0.9rem;
+      background: #fffcf8;
+      box-shadow: none;
+    }
+    .form-control:focus {
+      border-color: #b88b6b;
+      background: #fffcf8;
+    }
+    .btn-close-white {
+      filter: brightness(0) invert(1);
+    }
+
+    /* footer */
+    footer {
+      background: #1f1510;
+      border-radius: 40px 40px 0 0;
+      margin-top: 2.5rem;
+      padding: 1.8rem 1rem;
+    }
+
+    /* extra beauty: floating badge */
+    .floating-badge {
+      position: fixed;
+      bottom: 20px;
+      right: 16px;
+      background: #b88b6b;
+      color: #fff;
+      width: 52px;
+      height: 52px;
+      border-radius: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      box-shadow: 0 8px 20px rgba(184, 139, 107, 0.5);
+      z-index: 999;
+      border: none;
+      transition: 0.2s;
+      text-decoration: none;
+    }
+    .floating-badge:hover {
+      transform: scale(1.05);
+      background: #a17558;
+      color: #fff;
+    }
+
+    /* responsive tweaks */
+    @media (max-width: 576px) {
+      .hero-section h1 { font-size: 2.8rem; }
+      .hero-section .lead { font-size: 0.9rem; }
+      .section-title { font-size: 1.8rem; }
+      .navbar-brand { font-size: 1.3rem; }
+      .design-card .card-title { font-size: 0.95rem; }
+      .btn-custom { padding: 10px 26px; font-size: 0.9rem; }
+    }
+    @media (min-width: 768px) {
+      .hero-section { min-height: 80vh; border-radius: 0 0 60px 60px; }
+      .design-img { aspect-ratio: 4/3; }
+    }
+  </style>
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
-        <div class="container">
-            <a class="navbar-brand" href="#">Baby Henna</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse id="navbarNav"">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#gallery">Gallery & Designs</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">About Fatima</a></li>
-                </ul>
+  <!-- floating action (extra beauty) -->
+  <a href="#gallery" class="floating-badge" aria-label="view gallery">
+    <i class="bi bi-grid-3x3-gap-fill"></i>
+  </a>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="#"><i class="bi bi-flower2 me-1" style="color: #dbbca5;"></i> Baby Henna</a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">Artist</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero-section text-center text-white">
+    <div class="container">
+      <span class="sub-title"><i class="bi bi-droplet me-1"></i> Exquisite Henna</span>
+      <h1>Baby Henna</h1>
+      <p class="lead custom-lead">Stunning, intricate designs handcrafted by Fatima Rabiu. Browse & book your session.</p>
+      <a href="#gallery" class="btn btn-custom btn-lg mt-2"><i class="bi bi-images me-2"></i>Explore gallery</a>
+    </div>
+  </header>
+
+  <!-- GALLERY -->
+  <section id="gallery" class="py-4 bg-light" style="background: #fcf8f3 !important;">
+    <div class="container py-3">
+      <div class="text-center mb-4">
+        <h2 class="section-title">Our Henna Gallery</h2>
+        <div class="title-line mx-auto"></div>
+        <p class="text-muted mt-3" style="font-size:0.9rem;">Tap any design to book. Each piece is hand-drawn with love.</p>
+      </div>
+
+      <div class="row g-3 g-sm-4">
+        <!-- card 1 -->
+        <div class="col-6 col-md-4">
+          <div class="card design-card">
+            <img src="https://images.unsplash.com/photo-1583160247711-2191776b4b91?w=400&h=400&fit=crop&crop=center&auto=format" class="card-img-top design-img" alt="Elegant Floral">
+            <div class="card-body text-center">
+              <h5 class="card-title">Elegant Floral</h5>
+              <p class="card-text">Minimalist wrist-to-finger</p>
+              <button class="btn btn-order w-100" onclick="openOrderModal('Elegant Floral', 'https://images.unsplash.com/photo-1583160247711-2191776b4b91?w=400&h=400&fit=crop&crop=center&auto=format')">Book</button>
             </div>
+          </div>
         </div>
-    </nav>
-
-    <header class="hero-section text-center text-white d-flex align-items-center">
-        <div class="container">
-            <span class="sub-title">Exquisite Henna Artistry</span>
-            <h1 class="display-3 fw-bold mt-2">Baby Henna</h1>
-            <p class="lead custom-lead mx-auto">Discover stunning, intricate henna designs handcrafted with care by Fatima Rabiu. Explore our catalog below and place your booking seamlessly.</p>
-            <a href="#gallery" class="btn btn-custom btn-lg mt-3">View Our Designs</a>
-        </div>
-    </header>
-
-    <section id="gallery" class="py-5 bg-light">
-        <div class="container py-4">
-            <div class="text-center mb-5">
-                <h2 class="section-title">Our Henna Gallery</h2>
-                <div class="title-line mx-auto"></div>
-                <p class="text-muted mt-3">Click on any design you love to view details and place an instant order or booking request.</p>
+        <!-- card 2 -->
+        <div class="col-6 col-md-4">
+          <div class="card design-card">
+            <img src="https://images.unsplash.com/photo-1604373640938-1b1cd8ef8b01?w=400&h=400&fit=crop&crop=center&auto=format" class="card-img-top design-img" alt="Mandalas">
+            <div class="card-body text-center">
+              <h5 class="card-title">Mandalas</h5>
+              <p class="card-text">Full-bloom traditional</p>
+              <button class="btn btn-order w-100" onclick="openOrderModal('Mandalas', 'https://images.unsplash.com/photo-1604373640938-1b1cd8ef8b01?w=400&h=400&fit=crop&crop=center&auto=format')">Book</button>
             </div>
-
-            <div class="row g-4">
-                <div class="col-md-4 col-sm-6">
-                    <div class="card design-card border-0 shadow-sm">
-                        <img src="henna1.jpg" class="card-img-top design-img" alt="Elegant Floral Pattern">
-                        <div class="card-body text-center">
-                            <h5 class="card-title fw-bold">Elegant Floral Chain</h5>
-                            <p class="card-text text-muted">Minimalist dark paste wrist-to-finger layout.</p>
-                            <button class="btn btn-order w-100" onclick="openOrderModal('Elegant Floral Chain', 'images/henna1.jpg')">Order This Design</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <div class="card design-card border-0 shadow-sm">
-                        <img src="henna2.jpg" class="card-img-top design-img" alt="Full Hand Mandalas">
-                        <div class="card-body text-center">
-                            <h5 class="card-title fw-bold">Classic Detailed Mandalas</h5>
-                            <p class="card-text text-muted">Intricate full-bloom traditional coverage.</p>
-                            <button class="btn btn-order w-100" onclick="openOrderModal('Classic Detailed Mandalas', 'images/henna2.jpg')">Order This Design</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <div class="card design-card border-0 shadow-sm">
-                        <img src="henna3.jpg" class="card-img-top design-img" alt="Bridal Leaf Cuff">
-                        <div class="card-body text-center">
-                            <h5 class="card-title fw-bold">Leafy Vine Cuff</h5>
-                            <p class="card-text text-muted">Stunning wrist cuff patterns extending outwards.</p>
-                            <button class="btn btn-order w-100" onclick="openOrderModal('Leafy Vine Cuff', 'images/henna3.jpg')">Order This Design</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <div class="card design-card border-0 shadow-sm">
-                        <img src="henna4.jpg" class="card-img-top design-img" alt="Rose Vine Clusters">
-                        <div class="card-body text-center">
-                            <h5 class="card-title fw-bold">Rose Shaded Vine</h5>
-                            <p class="card-text text-muted">Bold burgundy shaded rose illustrations.</p>
-                            <button class="btn btn-order w-100" onclick="openOrderModal('Rose Shaded Vine', 'images/henna4.jpg')">Order This Design</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <div class="card design-card border-0 shadow-sm">
-                        <img src="henna5.jpg" class="card-img-top design-img" alt="Matching Hand and Foot Ensemble">
-                        <div class="card-body text-center">
-                            <h5 class="card-title fw-bold">Bridal Hand & Feet Set</h5>
-                            <p class="card-text text-muted">Coordinated heavy intricate patterns for events.</p>
-                            <button class="btn btn-order w-100" onclick="openOrderModal('Bridal Hand & Feet Set', 'images/henna5.jpg')">Order This Design</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <div class="card design-card border-0 shadow-sm">
-                        <img src="henna6.jpg" class="card-img-top design-img" alt="Classic Sudanese Red Pattern">
-                        <div class="card-body text-center">
-                            <h5 class="card-title fw-bold">Sudanese Bold Red Lace</h5>
-                            <p class="card-text text-muted">Deep traditional red intricate lace filling.</p>
-                            <button class="btn btn-order w-100" onclick="openOrderModal('Sudanese Bold Red Lace', 'images/henna6.jpg')">Order This Design</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <div class="card design-card border-0 shadow-sm">
-                        <img src="henna7.jpg" class="card-img-top design-img" alt="Flowing Rose Foliage">
-                        <div class="card-body text-center">
-                            <h5 class="card-title fw-bold">Flowing Rose Foliage</h5>
-                            <p class="card-text text-muted">Rich dark tint rose outlines down the arm.</p>
-                            <button class="btn btn-order w-100" onclick="openOrderModal('Flowing Rose Foliage', 'images/henna7.jpg')">Order This Design</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <div class="card design-card border-0 shadow-sm">
-                        <img src="henna8.jpg" class="card-img-top design-img" alt="Net Fingertip Filling">
-                        <div class="card-body text-center">
-                            <h5 class="card-title fw-bold">Net Grid & Swirls</h5>
-                            <p class="card-text text-muted">Gorgeous cross-hatched accent patterns.</p>
-                            <button class="btn btn-order w-100" onclick="openOrderModal('Net Grid & Swirls', 'images/henna8.jpg')">Order This Design</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <div class="card design-card border-0 shadow-sm">
-                        <img src="henna9.jpg" class="card-img-top design-img" alt="Royal Dual Hand Concept">
-                        <div class="card-body text-center">
-                            <h5 class="card-title fw-bold">Royal Geometric Splendor</h5>
-                            <p class="card-text text-muted">Striking symmetrical lines and mandalas.</p>
-                            <button class="btn btn-order w-100" onclick="openOrderModal('Royal Geometric Splendor', 'images/henna9.jpg')">Order This Design</button>
-                        </div>
-                    </div>
-                </div>
+          </div>
+        </div>
+        <!-- card 3 -->
+        <div class="col-6 col-md-4">
+          <div class="card design-card">
+            <img src="https://images.unsplash.com/photo-1583246570517-6c0b1c1c1b1b?w=400&h=400&fit=crop&crop=center&auto=format" class="card-img-top design-img" alt="Leafy Cuff">
+            <div class="card-body text-center">
+              <h5 class="card-title">Leafy Cuff</h5>
+              <p class="card-text">Wrist vine patterns</p>
+              <button class="btn btn-order w-100" onclick="openOrderModal('Leafy Cuff', 'https://images.unsplash.com/photo-1583246570517-6c0b1c1c1b1b?w=400&h=400&fit=crop&crop=center&auto=format')">Book</button>
             </div>
+          </div>
         </div>
-    </section>
-
-    <section id="about" class="py-5">
-        <div class="container py-4">
-            <div class="row align-items-center">
-                <div class="col-md-5 text-center mb-4 mb-md-0">
-                    <div class="about-img-frame">
-                        <img src="fatima.jpg" class="img-fluid rounded-circle shadow" alt="Fatima Rabiu">
-                    </div>
-                </div>
-                <div class="col-md-7 ps-md-5">
-                    <span class="text-uppercase text-muted fw-bold tracking-wider" style="letter-spacing: 2px; font-size: 0.85rem;">The Artist Behind the Cone</span>
-                    <h2 class="mt-2 fw-bold section-title-left">Fatima Rabiu</h2>
-                    <p class="mt-3 text-secondary" style="line-height: 1.8;">
-                        Welcome to Baby Henna! I am Fatima Rabiu, a passionate henna artist specialized in turning traditional body art into breathtaking statements. From delicate, minimalist lines to heavily detailed bridal packages, each pattern is hand-drawn to accentuate your style for weddings, Eid celebrations, or special moments.
-                    </p>
-                    <p class="text-secondary" style="line-height: 1.8;">
-                        We prioritize organic, skin-safe henna pastes to produce rich, beautiful stains that stand out. Explore my artwork gallery above, choose a concept that fits you perfectly, and drop your details to secure a session!
-                    </p>
-                </div>
+        <!-- card 4 -->
+        <div class="col-6 col-md-4">
+          <div class="card design-card">
+            <img src="https://images.unsplash.com/photo-1599707367072-cd6b2e2d2a2a?w=400&h=400&fit=crop&crop=center&auto=format" class="card-img-top design-img" alt="Rose Vine">
+            <div class="card-body text-center">
+              <h5 class="card-title">Rose Vine</h5>
+              <p class="card-text">Bold shaded roses</p>
+              <button class="btn btn-order w-100" onclick="openOrderModal('Rose Vine', 'https://images.unsplash.com/photo-1599707367072-cd6b2e2d2a2a?w=400&h=400&fit=crop&crop=center&auto=format')">Book</button>
             </div>
+          </div>
         </div>
-    </section>
-
-    <div class="modal fade" id="orderModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content border-0 shadow">
-                <div class="modal-header text-white text-center">
-                    <h5 class="modal-title fw-bold w-100" id="modalDesignTitle">Place Order</h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body p-4">
-                    <div class="text-center mb-3">
-                        <img src="" id="modalDesignImg" class="img-fluid rounded mb-3 shadow-sm" style="max-height: 200px; object-fit: cover; width: 100%;">
-                    </div>
-                    <form id="orderForm">
-                        <div class="mb-3">
-                            <label class="form-label fw-bold small text-secondary">Selected Design</label>
-                            <input type="text" class="form-control bg-light fw-bold" id="selectedDesignName" readonly>
-                        </div>
-                        <div class="mb-3">
-                            <label for="clientName" class="form-label fw-bold small text-secondary">Your Full Name</label>
-                            <input type="text" class="form-control" id="clientName" placeholder="Enter your name" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="clientPhone" class="form-label fw-bold small text-secondary">Phone Number</label>
-                            <input type="tel" class="form-control" id="clientPhone" placeholder="e.g. +234..." required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="clientAddress" class="form-label fw-bold small text-secondary">Delivery / Service Appointment Address</label>
-                            <textarea class="form-control" id="clientAddress" rows="3" placeholder="Provide your full address details here" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-custom w-100 mt-2 py-2 fw-bold">Submit Booking Request</button>
-                    </form>
-                </div>
+        <!-- card 5 -->
+        <div class="col-6 col-md-4">
+          <div class="card design-card">
+            <img src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=400&h=400&fit=crop&crop=center&auto=format" class="card-img-top design-img" alt="Bridal Set">
+            <div class="card-body text-center">
+              <h5 class="card-title">Bridal Set</h5>
+              <p class="card-text">Hand & feet ensemble</p>
+              <button class="btn btn-order w-100" onclick="openOrderModal('Bridal Set', 'https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=400&h=400&fit=crop&crop=center&auto=format')">Book</button>
             </div>
+          </div>
         </div>
-    </style>
-
-    <footer class="bg-dark text-white text-center py-4">
-        <div class="container">
-            <p class="mb-1 fw-bold">Baby Henna &copy; 2026</p>
-            <p class="small text-muted mb-0">Crafted beautifully for Fatima Rabiu. All rights reserved.</p>
+        <!-- card 6 -->
+        <div class="col-6 col-md-4">
+          <div class="card design-card">
+            <img src="https://images.unsplash.com/photo-1598935894212-0f3b9b6e6b1e?w=400&h=400&fit=crop&crop=center&auto=format" class="card-img-top design-img" alt="Sudanese Red">
+            <div class="card-body text-center">
+              <h5 class="card-title">Sudanese Red</h5>
+              <p class="card-text">Deep red lace</p>
+              <button class="btn btn-order w-100" onclick="openOrderModal('Sudanese Red', 'https://images.unsplash.com/photo-1598935894212-0f3b9b6e6b1e?w=400&h=400&fit=crop&crop=center&auto=format')">Book</button>
+            </div>
+          </div>
         </div>
-    </footer>
+        <!-- card 7 -->
+        <div class="col-6 col-md-4">
+          <div class="card design-card">
+            <img src="https://images.unsplash.com/photo-1579353977828-2a4eab540b9a?w=400&h=400&fit=crop&crop=center&auto=format" class="card-img-top design-img" alt="Flowing Foliage">
+            <div class="card-body text-center">
+              <h5 class="card-title">Flowing Foliage</h5>
+              <p class="card-text">Rose outlines</p>
+              <button class="btn btn-order w-100" onclick="openOrderModal('Flowing Foliage', 'https://images.unsplash.com/photo-1579353977828-2a4eab540b9a?w=400&h=400&fit=crop&crop=center&auto=format')">Book</button>
+            </div>
+          </div>
+        </div>
+        <!-- card 8 -->
+        <div class="col-6 col-md-4">
+          <div class="card design-card">
+            <img src="https://images.unsplash.com/photo-1615551043360-33de8b5f410c?w=400&h=400&fit=crop&crop=center&auto=format" class="card-img-top design-img" alt="Net Grid">
+            <div class="card-body text-center">
+              <h5 class="card-title">Net Grid</h5>
+              <p class="card-text">Cross-hatched swirls</p>
+              <button class="btn btn-order w-100" onclick="openOrderModal('Net Grid', 'https://images.unsplash.com/photo-1615551043360-33de8b5f410c?w=400&h=400&fit=crop&crop=center&auto=format')">Book</button>
+            </div>
+          </div>
+        </div>
+        <!-- card 9 -->
+        <div class="col-6 col-md-4">
+          <div class="card design-card">
+            <img src="https://images.unsplash.com/photo-1622383563227-04401ab4e5ea?w=400&h=400&fit=crop&crop=center&auto=format" class="card-img-top design-img" alt="Royal Geometric">
+            <div class="card-body text-center">
+              <h5 class="card-title">Royal Geometric</h5>
+              <p class="card-text">Symmetrical lines</p>
+              <button class="btn btn-order w-100" onclick="openOrderModal('Royal Geometric', 'https://images.unsplash.com/photo-1622383563227-04401ab4e5ea?w=400&h=400&fit=crop&crop=center&auto=format')">Book</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- ABOUT -->
+  <section id="about" class="py-4">
+    <div class="container py-3">
+      <div class="row align-items-center gy-4">
+        <div class="col-md-5 text-center">
+          <div class="about-img-frame">
+            <img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=300&h=300&fit=crop&crop=face&auto=format" alt="Fatima Rabiu">
+          </div>
+        </div>
+        <div class="col-md-7">
+          <span class="text-uppercase text-muted fw-bold" style="letter-spacing: 2px; font-size:0.75rem;">The Artist</span>
+          <h2 class="section-title-left mt-1">Fatima Rabiu</h2>
+          <p class="mt-3 text-secondary" style="line-height:1.7; font-size:0.95rem;">
+            Welcome to <strong>Baby Henna</strong> — I’m Fatima, a henna artist dedicated to transforming body art into timeless statements. From delicate lines to bold bridal packages, every pattern is hand-drawn to complement your style for weddings, Eid, or any special moment.
+          </p>
+          <p class="text-secondary" style="line-height:1.7; font-size:0.95rem;">
+            We use organic, skin-safe pastes for rich, lasting stains. Browse the gallery, pick your favourite design, and book your session with ease.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <script>
-        let bootstrapModal;
+  <!-- MODAL -->
+  <div class="modal fade" id="orderModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header text-white">
+          <h5 class="modal-title fw-bold w-100 text-center" id="modalDesignTitle">Book Design</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="text-center mb-3">
+            <img src="" id="modalDesignImg" class="img-fluid rounded" alt="design preview">
+          </div>
+          <form id="orderForm">
+            <div class="mb-3">
+              <label class="form-label fw-bold small text-secondary">Design</label>
+              <input type="text" class="form-control bg-light" id="selectedDesignName" readonly style="font-weight:500;">
+            </div>
+            <div class="mb-3">
+              <label class="form-label fw-bold small text-secondary">Full Name</label>
+              <input type="text" class="form-control" id="clientName" placeholder="Your name" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label fw-bold small text-secondary">Phone</label>
+              <input type="tel" class="form-control" id="clientPhone" placeholder="e.g. +234..." required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label fw-bold small text-secondary">Address / appointment</label>
+              <textarea class="form-control" id="clientAddress" rows="3" placeholder="Full address or location" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-custom w-100 py-2 fw-bold">Submit booking</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 
-        function openOrderModal(designName, imgSrc) {
-            document.getElementById('modalDesignTitle').innerText = "Book " + designName;
-            document.getElementById('selectedDesignName').value = designName;
-            document.getElementById('modalDesignImg').src = imgSrc;
-            
-            bootstrapModal = new bootstrap.Modal(document.getElementById('orderModal'));
-            bootstrapModal.show();
-        }
+  <!-- FOOTER -->
+  <footer class="text-white text-center">
+    <div class="container">
+      <p class="mb-1 fw-bold" style="font-family:'Playfair Display',serif;">Baby Henna <i class="bi bi-suit-heart-fill" style="color:#dbbca5; font-size:0.9rem;"></i></p>
+      <p class="small text-muted mb-0">&copy; 2026 · crafted for Fatima Rabiu</p>
+    </div>
+  </footer>
 
-        document.getElementById('orderForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const design = document.getElementById('selectedDesignName').value;
-            const name = document.getElementById('clientName').value;
-            const phone = document.getElementById('clientPhone').value;
-            const address = document.getElementById('clientAddress').value;
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    let bootstrapModal;
 
-            // This displays an alert acknowledging the submitted payload structure.
-            alert(`Thank you, ${name}!\nYour booking for "${design}" has been registered successfully.\nDetails:\nPhone: ${phone}\nAddress: ${address}\nFatima will contact you shortly.`);
-            
-            // Clear fields and hide window
-            document.getElementById('orderForm').reset();
-            bootstrapModal.hide();
-        });
-    </script>
+    function openOrderModal(designName, imgSrc) {
+      document.getElementById('modalDesignTitle').innerText = "Book " + designName;
+      document.getElementById('selectedDesignName').value = designName;
+      document.getElementById('modalDesignImg').src = imgSrc;
+      bootstrapModal = new bootstrap.Modal(document.getElementById('orderModal'));
+      bootstrapModal.show();
+    }
+
+    document.getElementById('orderForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const design = document.getElementById('selectedDesignName').value;
+      const name = document.getElementById('clientName').value;
+      const phone = document.getElementById('clientPhone').value;
+      const address = document.getElementById('clientAddress').value;
+      alert(`✨ Thank you, ${name}!\nYour booking for "${design}" is registered.\nPhone: ${phone}\nAddress: ${address}\nFatima will reach out shortly.`);
+      document.getElementById('orderForm').reset();
+      bootstrapModal.hide();
+    });
+  </script>
 </body>
 </html>
