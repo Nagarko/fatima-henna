@@ -1,1 +1,369 @@
+/* ============================================================
+   style.css  —  Baby Henna (mobile-first, all custom styles)
+   ============================================================ */
 
+/* ----- Color Palette (matches your variables) ----- */
+:root {
+    --primary-color: #5c1d24;    /* Deep Henna Mahogany Wine */
+    --accent-color: #d4a373;     /* Warm Sand / Gold Accent */
+    --dark-neutral: #1a1a1a;     /* Jet black backgrounds */
+    --text-muted: #6c757d;
+}
+
+/* ----- Reset & Base ----- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    background: #fcf8f3;
+    overflow-x: hidden;
+    padding-bottom: 0.5rem;
+}
+
+/* ----- TOP ANNOUNCEMENT BAR ----- */
+.top-announcement-bar {
+    background-color: #421116;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid rgba(214, 163, 115, 0.3);
+    color: #f0e0d4;
+    padding: 6px 0;
+    text-align: center;
+}
+.top-announcement-bar i {
+    color: var(--accent-color);
+    margin-right: 6px;
+}
+
+/* ----- FLOATING BADGE (mobile quick access) ----- */
+.floating-badge {
+    position: fixed;
+    bottom: 20px;
+    right: 16px;
+    background: var(--accent-color);
+    color: #1a0003;
+    width: 52px;
+    height: 52px;
+    border-radius: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: 0 8px 24px rgba(212, 163, 115, 0.5);
+    z-index: 999;
+    border: none;
+    transition: 0.2s;
+    text-decoration: none;
+}
+.floating-badge:hover {
+    transform: scale(1.08);
+    background: #c49264;
+    color: #1a0003;
+}
+
+/* ----- NAVBAR ----- */
+.navbar {
+    background-color: var(--primary-color) !important;
+    border-bottom: 2px solid var(--accent-color);
+    padding: 0.5rem 0;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+.navbar-brand {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+    color: var(--accent-color) !important;
+}
+.navbar-brand i {
+    color: var(--accent-color);
+}
+.nav-link {
+    font-size: 0.9rem;
+    font-weight: 400;
+    margin-left: 8px;
+    padding: 6px 14px;
+    border-radius: 40px;
+    color: rgba(255, 255, 255, 0.8) !important;
+    transition: 0.2s;
+}
+.nav-link:hover,
+.nav-link.active {
+    background: var(--accent-color);
+    color: #1a0003 !important;
+}
+.navbar-toggler {
+    border: 1px solid var(--accent-color);
+    padding: 4px 8px;
+}
+.navbar-toggler-icon {
+    filter: brightness(0) invert(1);
+}
+
+/* ----- HERO SECTION ----- */
+.hero-section {
+    background: linear-gradient(rgba(26, 0, 5, 0.7), rgba(26, 0, 5, 0.75)),
+        url('https://images.unsplash.com/photo-1583160247711-2191776b4b91?w=800&h=600&fit=crop&crop=center&auto=format') no-repeat center center/cover;
+    min-height: 80vh;
+    background-attachment: scroll;
+    display: flex;
+    align-items: center;
+    border-radius: 0 0 40px 40px;
+    margin-bottom: 1.5rem;
+    padding: 2rem 1rem;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+.sub-title {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: var(--accent-color);
+    font-size: 1.1rem;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(4px);
+    padding: 6px 22px;
+    border-radius: 60px;
+    display: inline-block;
+    border: 1px solid rgba(212, 163, 115, 0.25);
+}
+.hero-section h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.2rem;
+    font-weight: 700;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+.custom-lead {
+    max-width: 600px;
+    font-weight: 300;
+    font-size: 1rem;
+    opacity: 0.92;
+    line-height: 1.6;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 0.5rem;
+}
+
+/* ----- TYPOGRAPHY ----- */
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 2.1rem;
+    color: var(--primary-color);
+}
+.section-title-left {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 2rem;
+    color: var(--primary-color);
+}
+.title-line {
+    height: 3px;
+    width: 70px;
+    background-color: var(--accent-color);
+    margin: 10px auto 0;
+    border-radius: 10px;
+}
+
+/* ----- GALLERY CARDS (mobile-optimized) ----- */
+.design-card {
+    transition: transform 0.25s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    border-radius: 20px !important;
+    background: #fffcf8;
+    border: 1px solid rgba(200, 175, 158, 0.2);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.design-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.08) !important;
+    border-color: var(--accent-color);
+}
+.design-img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+    background: #ede2d8;
+}
+.design-card:hover .design-img {
+    transform: scale(1.03);
+}
+.card-body {
+    padding: 0.8rem 0.6rem 0.9rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.card-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 0.1rem;
+}
+.card-text {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin-bottom: 0.6rem;
+}
+
+/* ----- BUTTONS ----- */
+.btn-custom {
+    background-color: var(--accent-color);
+    color: #1a0003;
+    font-weight: 600;
+    border: 2px solid var(--accent-color);
+    border-radius: 60px;
+    padding: 10px 28px;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+.btn-custom:hover {
+    background-color: transparent;
+    color: var(--accent-color);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(212, 163, 115, 0.3);
+}
+.btn-order {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    font-weight: 500;
+    border-radius: 40px;
+    padding: 8px 10px;
+    border: none;
+    transition: all 0.2s;
+    font-size: 0.85rem;
+    width: 100%;
+}
+.btn-order:hover {
+    background-color: #7a2a33;
+    color: #fff;
+    opacity: 0.95;
+}
+
+/* ----- ABOUT SECTION ----- */
+.about-img-frame {
+    display: inline-block;
+    padding: 10px;
+    border: 2px dashed var(--accent-color);
+    border-radius: 50%;
+    max-width: 220px;
+    margin: 0 auto;
+    background: #fff;
+}
+.about-img-frame img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* ----- MODAL ----- */
+.modal-header {
+    background-color: var(--primary-color);
+    border-radius: 24px 24px 0 0;
+    padding: 1rem 1.2rem;
+}
+.modal-header .modal-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+.modal-content {
+    border-radius: 28px;
+    border: none;
+    background: #fffaf5;
+}
+.modal-body {
+    padding: 1.2rem;
+}
+.modal-body img {
+    max-height: 180px;
+    object-fit: cover;
+    width: 100%;
+    border-radius: 20px;
+    background: #ede2d8;
+}
+.form-control {
+    border-radius: 40px;
+    border: 1px solid #dccfc4;
+    padding: 10px 18px;
+    font-size: 0.9rem;
+    background: #fffcf8;
+}
+.form-control:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 0.25rem rgba(212, 163, 115, 0.25);
+}
+
+/* ----- FOOTER ----- */
+footer {
+    background: var(--primary-color);
+    border-radius: 40px 40px 0 0;
+    margin-top: 2.5rem;
+    padding: 1.8rem 1rem;
+    border-top: 2px solid var(--accent-color);
+}
+
+/* ===== RESPONSIVE TWEAKS (mobile-first) ===== */
+@media (max-width: 576px) {
+    .hero-section {
+        min-height: 70vh;
+        border-radius: 0 0 28px 28px;
+    }
+    .hero-section h1 {
+        font-size: 2.6rem;
+    }
+    .sub-title {
+        font-size: 0.9rem;
+        padding: 4px 16px;
+    }
+    .custom-lead {
+        font-size: 0.9rem;
+    }
+    .section-title {
+        font-size: 1.8rem;
+    }
+    .section-title-left {
+        font-size: 1.7rem;
+    }
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+    .design-card .card-title {
+        font-size: 0.9rem;
+    }
+    .btn-custom {
+        padding: 8px 22px;
+        font-size: 0.85rem;
+    }
+    .about-img-frame {
+        max-width: 170px;
+    }
+    .floating-badge {
+        width: 48px;
+        height: 48px;
+        font-size: 1.3rem;
+        bottom: 16px;
+        right: 12px;
+    }
+}
+
+@media (min-width: 768px) {
+    .hero-section {
+        min-height: 80vh;
+        border-radius: 0 0 60px 60px;
+    }
+    .design-img {
+        aspect-ratio: 4 / 3;
+    }
+    .about-img-frame {
+        max-width: 280px;
+    }
+}
