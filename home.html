@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
     <title>Baby Henna · Beautiful Henna Artistry by Fatima Rabiu</title>
     <!-- Bootstrap 5 + Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
@@ -14,175 +14,329 @@
 </head>
 <body>
 
-    <!-- OPTIONAL ANNOUNCEMENT BAR -->
-    <div class="top-announcement-bar d-none d-sm-block">
-        <i class="bi bi-flower2"></i> Free consultation · book your session today
+    <!-- ===== TOP ANNOUNCEMENT BAR ===== -->
+    <div class="top-announcement-bar">
+        <div class="container">
+            <i class="bi bi-flower2"></i> 
+            <span>Free consultation · book your session today</span>
+            <i class="bi bi-arrow-right ms-2 d-none d-sm-inline"></i>
+        </div>
     </div>
 
-    <!-- FLOATING GALLERY BADGE (mobile quick access) -->
-    <a href="#gallery" class="floating-badge" aria-label="view gallery">
+    <!-- ===== FLOATING BADGE (mobile quick access) ===== -->
+    <a href="#gallery" class="floating-badge" aria-label="view gallery" data-bs-toggle="tooltip" title="View Gallery">
         <i class="bi bi-grid-3x3-gap-fill"></i>
     </a>
 
     <!-- ===== NAVBAR ===== -->
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="#"><i class="bi bi-flower2 me-1"></i> Baby Henna</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-brand" href="#">
+                <i class="bi bi-flower2 me-2"></i>Baby Henna
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto align-items-lg-center">
-                    <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">Artist</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home"><i class="bi bi-house-fill me-1"></i>Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#gallery"><i class="bi bi-images me-1"></i>Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about"><i class="bi bi-person-fill me-1"></i>Artist</a>
+                    </li>
+                    <li class="nav-item d-lg-none">
+                        <a class="nav-link" href="#contact"><i class="bi bi-envelope-fill me-1"></i>Contact</a>
+                    </li>
                 </ul>
+                <a href="#gallery" class="btn btn-outline-accent ms-lg-3 d-none d-lg-inline-block">
+                    <i class="bi bi-plus-circle me-1"></i>Book Now
+                </a>
             </div>
         </div>
     </nav>
 
-    <!-- ===== HERO ===== -->
-    <header class="hero-section text-center text-white">
-        <div class="container">
-            <span class="sub-title"><i class="bi bi-droplet me-1"></i> Exquisite Henna Artistry</span>
-            <h1 class="display-3 fw-bold mt-2">Baby Henna</h1>
-            <p class="lead custom-lead">Stunning, intricate designs handcrafted with care by Fatima Rabiu. Browse &amp; book your session.</p>
-            <a href="#gallery" class="btn btn-custom btn-lg mt-2"><i class="bi bi-images me-2"></i>View Designs</a>
+    <!-- ===== HERO SECTION ===== -->
+    <header id="home" class="hero-section text-center text-white d-flex align-items-center">
+        <div class="container position-relative">
+            <div class="hero-badge mb-3">
+                <i class="bi bi-award-fill me-1"></i> Award-Winning Artist
+            </div>
+            <span class="sub-title"><i class="bi bi-droplet me-2"></i>Exquisite Henna Artistry</span>
+            <h1 class="display-2 fw-bold mt-3 mb-4">Baby Henna</h1>
+            <p class="lead custom-lead mx-auto">
+                Discover stunning, intricate henna designs handcrafted with care by Fatima Rabiu. 
+                Explore our catalog below and place your booking seamlessly.
+            </p>
+            <div class="d-flex flex-wrap justify-content-center gap-3 mt-4">
+                <a href="#gallery" class="btn btn-custom btn-lg">
+                    <i class="bi bi-images me-2"></i>View Designs
+                </a>
+                <a href="#about" class="btn btn-outline-light btn-lg">
+                    <i class="bi bi-person me-2"></i>Meet Fatima
+                </a>
+            </div>
+            <div class="hero-stats mt-5 d-none d-sm-flex justify-content-center gap-5">
+                <div class="stat-item">
+                    <span class="stat-number">500+</span>
+                    <span class="stat-label">Happy Clients</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">9</span>
+                    <span class="stat-label">Design Styles</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">5⭐</span>
+                    <span class="stat-label">Top Rated</span>
+                </div>
+            </div>
         </div>
     </header>
 
-    <!-- ===== GALLERY ===== -->
-    <section id="gallery" class="py-4" style="background: #fcf8f3;">
-        <div class="container py-3">
-            <div class="text-center mb-4">
-                <h2 class="section-title">Our Henna Gallery</h2>
+    <!-- ===== GALLERY SECTION ===== -->
+    <section id="gallery" class="py-5">
+        <div class="container py-4">
+            <div class="text-center mb-5">
+                <span class="section-tag"><i class="bi bi-grid-fill me-2"></i>Our Collection</span>
+                <h2 class="section-title">Henna Gallery</h2>
                 <div class="title-line mx-auto"></div>
-                <p class="text-muted mt-3" style="font-size:0.9rem;">Tap any design to book. Each piece is hand-drawn with love.</p>
+                <p class="text-muted mt-3" style="font-size:1rem; max-width:500px; margin-left:auto; margin-right:auto;">
+                    Click on any design you love to view details and place an instant booking request.
+                </p>
             </div>
 
-            <div class="row g-3 g-sm-4">
-                <!-- ========================================================== -->
-                <!--  CARD 1  —  replace "henna1.jpg" with your image path       -->
-                <!-- ========================================================== -->
-                <div class="col-6 col-md-4">
-                    <div class="card design-card">
-                        <img src="henna1.jpg" class="card-img-top design-img" alt="Elegant Floral">
+            <div class="row g-4">
+                <!-- ========== CARD 1 ========== -->
+                <div class="col-6 col-md-4 col-lg-4">
+                    <div class="card design-card h-100 border-0">
+                        <div class="card-img-wrapper">
+                            <img src="henna1.jpg" class="card-img-top design-img" alt="Elegant Floral Pattern" />
+                            <div class="card-overlay">
+                                <span class="badge bg-accent">Popular</span>
+                            </div>
+                        </div>
                         <div class="card-body text-center">
-                            <h5 class="card-title">Elegant Floral</h5>
-                            <p class="card-text">Minimalist wrist-to-finger</p>
-                            <button class="btn btn-order" onclick="openOrderModal('Elegant Floral', 'henna1.jpg')">Book</button>
+                            <h5 class="card-title">Elegant Floral Chain</h5>
+                            <p class="card-text text-muted">Minimalist dark paste wrist-to-finger layout.</p>
+                            <button class="btn btn-order w-100" onclick="openOrderModal('Elegant Floral Chain', 'henna1.jpg')">
+                                <i class="bi bi-calendar-check me-2"></i>Book This Design
+                            </button>
                         </div>
                     </div>
                 </div>
 
-                <!-- ========================================================== -->
-                <!--  CARD 2  —  replace "henna2.jpg" with your image path       -->
-                <!-- ========================================================== -->
-                <div class="col-6 col-md-4">
-                    <div class="card design-card">
-                        <img src="henna2.jpg" class="card-img-top design-img" alt="Mandalas">
+                <!-- ========== CARD 2 ========== -->
+                <div class="col-6 col-md-4 col-lg-4">
+                    <div class="card design-card h-100 border-0">
+                        <div class="card-img-wrapper">
+                            <img src="henna2.jpg" class="card-img-top design-img" alt="Full Hand Mandalas" />
+                            <div class="card-overlay">
+                                <span class="badge bg-accent">Best Seller</span>
+                            </div>
+                        </div>
                         <div class="card-body text-center">
-                            <h5 class="card-title">Mandalas</h5>
-                            <p class="card-text">Full-bloom traditional</p>
-                            <button class="btn btn-order" onclick="openOrderModal('Mandalas', 'henna2.jpg')">Book</button>
+                            <h5 class="card-title">Classic Detailed Mandalas</h5>
+                            <p class="card-text text-muted">Intricate full-bloom traditional coverage.</p>
+                            <button class="btn btn-order w-100" onclick="openOrderModal('Classic Detailed Mandalas', 'henna2.jpg')">
+                                <i class="bi bi-calendar-check me-2"></i>Book This Design
+                            </button>
                         </div>
                     </div>
                 </div>
 
-                <!-- ========================================================== -->
-                <!--  CARD 3  —  replace "henna3.jpg" with your image path       -->
-                <!-- ========================================================== -->
-                <div class="col-6 col-md-4">
-                    <div class="card design-card">
-                        <img src="henna3.jpg" class="card-img-top design-img" alt="Leafy Cuff">
+                <!-- ========== CARD 3 ========== -->
+                <div class="col-6 col-md-4 col-lg-4">
+                    <div class="card design-card h-100 border-0">
+                        <div class="card-img-wrapper">
+                            <img src="henna3.jpg" class="card-img-top design-img" alt="Bridal Leaf Cuff" />
+                            <div class="card-overlay">
+                                <span class="badge bg-accent">New</span>
+                            </div>
+                        </div>
                         <div class="card-body text-center">
-                            <h5 class="card-title">Leafy Cuff</h5>
-                            <p class="card-text">Wrist vine patterns</p>
-                            <button class="btn btn-order" onclick="openOrderModal('Leafy Cuff', 'henna3.jpg')">Book</button>
+                            <h5 class="card-title">Leafy Vine Cuff</h5>
+                            <p class="card-text text-muted">Stunning wrist cuff patterns extending outwards.</p>
+                            <button class="btn btn-order w-100" onclick="openOrderModal('Leafy Vine Cuff', 'henna3.jpg')">
+                                <i class="bi bi-calendar-check me-2"></i>Book This Design
+                            </button>
                         </div>
                     </div>
                 </div>
 
-                <!-- ========================================================== -->
-                <!--  CARD 4  —  replace "henna4.jpg" with your image path       -->
-                <!-- ========================================================== -->
-                <div class="col-6 col-md-4">
-                    <div class="card design-card">
-                        <img src="henna4.jpg" class="card-img-top design-img" alt="Rose Vine">
+                <!-- ========== CARD 4 ========== -->
+                <div class="col-6 col-md-4 col-lg-4">
+                    <div class="card design-card h-100 border-0">
+                        <div class="card-img-wrapper">
+                            <img src="henna4.jpg" class="card-img-top design-img" alt="Rose Vine Clusters" />
+                            <div class="card-overlay">
+                                <span class="badge bg-accent">Trending</span>
+                            </div>
+                        </div>
                         <div class="card-body text-center">
-                            <h5 class="card-title">Rose Vine</h5>
-                            <p class="card-text">Bold shaded roses</p>
-                            <button class="btn btn-order" onclick="openOrderModal('Rose Vine', 'henna4.jpg')">Book</button>
+                            <h5 class="card-title">Rose Shaded Vine</h5>
+                            <p class="card-text text-muted">Bold burgundy shaded rose illustrations.</p>
+                            <button class="btn btn-order w-100" onclick="openOrderModal('Rose Shaded Vine', 'henna4.jpg')">
+                                <i class="bi bi-calendar-check me-2"></i>Book This Design
+                            </button>
                         </div>
                     </div>
                 </div>
 
-                <!-- ========================================================== -->
-                <!--  CARD 5  —  replace "henna5.jpg" with your image path       -->
-                <!-- ========================================================== -->
-                <div class="col-6 col-md-4">
-                    <div class="card design-card">
-                        <img src="henna5.jpg" class="card-img-top design-img" alt="Bridal Set">
+                <!-- ========== CARD 5 ========== -->
+                <div class="col-6 col-md-4 col-lg-4">
+                    <div class="card design-card h-100 border-0">
+                        <div class="card-img-wrapper">
+                            <img src="henna5.jpg" class="card-img-top design-img" alt="Matching Hand and Foot Ensemble" />
+                            <div class="card-overlay">
+                                <span class="badge bg-accent">Bridal</span>
+                            </div>
+                        </div>
                         <div class="card-body text-center">
-                            <h5 class="card-title">Bridal Set</h5>
-                            <p class="card-text">Hand &amp; feet ensemble</p>
-                            <button class="btn btn-order" onclick="openOrderModal('Bridal Set', 'henna5.jpg')">Book</button>
+                            <h5 class="card-title">Bridal Hand & Feet Set</h5>
+                            <p class="card-text text-muted">Coordinated heavy intricate patterns for events.</p>
+                            <button class="btn btn-order w-100" onclick="openOrderModal('Bridal Hand & Feet Set', 'henna5.jpg')">
+                                <i class="bi bi-calendar-check me-2"></i>Book This Design
+                            </button>
                         </div>
                     </div>
                 </div>
 
-                <!-- ========================================================== -->
-                <!--  CARD 6  —  replace "henna6.jpg" with your image path       -->
-                <!-- ========================================================== -->
-                <div class="col-6 col-md-4">
-                    <div class="card design-card">
-                        <img src="henna6.jpg" class="card-img-top design-img" alt="Sudanese Red">
+                <!-- ========== CARD 6 ========== -->
+                <div class="col-6 col-md-4 col-lg-4">
+                    <div class="card design-card h-100 border-0">
+                        <div class="card-img-wrapper">
+                            <img src="henna6.jpg" class="card-img-top design-img" alt="Classic Sudanese Red Pattern" />
+                            <div class="card-overlay">
+                                <span class="badge bg-accent">Traditional</span>
+                            </div>
+                        </div>
                         <div class="card-body text-center">
-                            <h5 class="card-title">Sudanese Red</h5>
-                            <p class="card-text">Deep red lace</p>
-                            <button class="btn btn-order" onclick="openOrderModal('Sudanese Red', 'henna6.jpg')">Book</button>
+                            <h5 class="card-title">Sudanese Bold Red Lace</h5>
+                            <p class="card-text text-muted">Deep traditional red intricate lace filling.</p>
+                            <button class="btn btn-order w-100" onclick="openOrderModal('Sudanese Bold Red Lace', 'henna6.jpg')">
+                                <i class="bi bi-calendar-check me-2"></i>Book This Design
+                            </button>
                         </div>
                     </div>
                 </div>
 
-                <!-- ========================================================== -->
-                <!--  CARD 7  —  replace "henna7.jpg" with your image path       -->
-                <!-- ========================================================== -->
-                <div class="col-6 col-md-4">
-                    <div class="card design-card">
-                        <img src="henna7.jpg" class="card-img-top design-img" alt="Flowing Foliage">
+                <!-- ========== CARD 7 ========== -->
+                <div class="col-6 col-md-4 col-lg-4">
+                    <div class="card design-card h-100 border-0">
+                        <div class="card-img-wrapper">
+                            <img src="henna7.jpg" class="card-img-top design-img" alt="Flowing Rose Foliage" />
+                            <div class="card-overlay">
+                                <span class="badge bg-accent">Elegant</span>
+                            </div>
+                        </div>
                         <div class="card-body text-center">
-                            <h5 class="card-title">Flowing Foliage</h5>
-                            <p class="card-text">Rose outlines</p>
-                            <button class="btn btn-order" onclick="openOrderModal('Flowing Foliage', 'henna7.jpg')">Book</button>
+                            <h5 class="card-title">Flowing Rose Foliage</h5>
+                            <p class="card-text text-muted">Rich dark tint rose outlines down the arm.</p>
+                            <button class="btn btn-order w-100" onclick="openOrderModal('Flowing Rose Foliage', 'henna7.jpg')">
+                                <i class="bi bi-calendar-check me-2"></i>Book This Design
+                            </button>
                         </div>
                     </div>
                 </div>
 
-                <!-- ========================================================== -->
-                <!--  CARD 8  —  replace "henna8.jpg" with your image path       -->
-                <!-- ========================================================== -->
-                <div class="col-6 col-md-4">
-                    <div class="card design-card">
-                        <img src="henna8.jpg" class="card-img-top design-img" alt="Net Grid">
+                <!-- ========== CARD 8 ========== -->
+                <div class="col-6 col-md-4 col-lg-4">
+                    <div class="card design-card h-100 border-0">
+                        <div class="card-img-wrapper">
+                            <img src="henna8.jpg" class="card-img-top design-img" alt="Net Fingertip Filling" />
+                            <div class="card-overlay">
+                                <span class="badge bg-accent">Unique</span>
+                            </div>
+                        </div>
                         <div class="card-body text-center">
-                            <h5 class="card-title">Net Grid</h5>
-                            <p class="card-text">Cross-hatched swirls</p>
-                            <button class="btn btn-order" onclick="openOrderModal('Net Grid', 'henna8.jpg')">Book</button>
+                            <h5 class="card-title">Net Grid & Swirls</h5>
+                            <p class="card-text text-muted">Gorgeous cross-hatched accent patterns.</p>
+                            <button class="btn btn-order w-100" onclick="openOrderModal('Net Grid & Swirls', 'henna8.jpg')">
+                                <i class="bi bi-calendar-check me-2"></i>Book This Design
+                            </button>
                         </div>
                     </div>
                 </div>
 
-                <!-- ========================================================== -->
-                <!--  CARD 9  —  replace "henna9.jpg" with your image path       -->
-                <!-- ========================================================== -->
-                <div class="col-6 col-md-4">
-                    <div class="card design-card">
-                        <img src="henna9.jpg" class="card-img-top design-img" alt="Royal Geometric">
+                <!-- ========== CARD 9 ========== -->
+                <div class="col-6 col-md-4 col-lg-4">
+                    <div class="card design-card h-100 border-0">
+                        <div class="card-img-wrapper">
+                            <img src="henna9.jpg" class="card-img-top design-img" alt="Royal Dual Hand Concept" />
+                            <div class="card-overlay">
+                                <span class="badge bg-accent">Luxury</span>
+                            </div>
+                        </div>
                         <div class="card-body text-center">
-                            <h5 class="card-title">Royal Geometric</h5>
-                            <p class="card-text">Symmetrical lines</p>
-                            <button class="btn btn-order" onclick="openOrderModal('Royal Geometric', 'henna9.jpg')">Book</button>
+                            <h5 class="card-title">Royal Geometric Splendor</h5>
+                            <p class="card-text text-muted">Striking symmetrical lines and mandalas.</p>
+                            <button class="btn btn-order w-100" onclick="openOrderModal('Royal Geometric Splendor', 'henna9.jpg')">
+                                <i class="bi bi-calendar-check me-2"></i>Book This Design
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gallery CTA -->
+            <div class="text-center mt-5">
+                <div class="p-4 bg-white rounded-4 shadow-sm d-inline-block px-5">
+                    <i class="bi bi-heart-fill text-accent me-2"></i>
+                    <span class="fw-semibold">Can't find your style?</span>
+                    <a href="#about" class="btn btn-link text-accent fw-bold text-decoration-none">
+                        Request Custom Design <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ABOUT SECTION ===== -->
+    <section id="about" class="py-5 bg-light">
+        <div class="container py-4">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-5 text-center">
+                    <div class="about-img-frame position-relative">
+                        <!-- ========================================================== -->
+                        <!--  OWNER IMAGE  —  replace "fatima.jpg" with your image path  -->
+                        <!-- ========================================================== -->
+                        <img src="fatima.jpg" alt="Fatima Rabiu" class="img-fluid" />
+                        <div class="about-badge position-absolute bottom-0 start-50 translate-middle-x">
+                            <i class="bi bi-star-fill"></i> 5+ Years
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <span class="section-tag"><i class="bi bi-person-fill me-2"></i>The Artist</span>
+                    <h2 class="section-title-left mt-2">Fatima Rabiu</h2>
+                    <div class="title-line-left mb-4"></div>
+                    <p class="text-secondary" style="line-height:1.8; font-size:1.05rem;">
+                        Welcome to <strong>Baby Henna</strong>! I am Fatima Rabiu, a passionate henna artist 
+                        specialized in turning traditional body art into breathtaking statements. From delicate, 
+                        minimalist lines to heavily detailed bridal packages, each pattern is hand-drawn to 
+                        accentuate your style for weddings, Eid celebrations, or special moments.
+                    </p>
+                    <p class="text-secondary" style="line-height:1.8; font-size:1.05rem;">
+                        We prioritize organic, skin-safe henna pastes to produce rich, beautiful stains that 
+                        stand out. Explore my artwork gallery above, choose a concept that fits you perfectly, 
+                        and drop your details to secure a session!
+                    </p>
+                    <div class="d-flex flex-wrap gap-3 mt-4">
+                        <div class="about-feature">
+                            <i class="bi bi-check-circle-fill text-accent"></i>
+                            <span>Organic Paste</span>
+                        </div>
+                        <div class="about-feature">
+                            <i class="bi bi-check-circle-fill text-accent"></i>
+                            <span>5+ Years Experience</span>
+                        </div>
+                        <div class="about-feature">
+                            <i class="bi bi-check-circle-fill text-accent"></i>
+                            <span>Custom Designs</span>
                         </div>
                     </div>
                 </div>
@@ -190,99 +344,182 @@
         </div>
     </section>
 
-    <!-- ===== ABOUT ===== -->
-    <section id="about" class="py-4">
-        <div class="container py-3">
-            <div class="row align-items-center gy-4">
-                <div class="col-md-5 text-center">
-                    <div class="about-img-frame">
-                        <!-- ================================================== -->
-                        <!--  OWNER IMAGE  —  replace "fatima.jpg" with your   -->
-                        <!--  image path for the artist photo                  -->
-                        <!-- ================================================== -->
-                        <img src="fatima.jpg" alt="Fatima Rabiu" />
+    <!-- ===== CONTACT / CTA SECTION ===== -->
+    <section id="contact" class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="cta-card p-5 text-center text-white rounded-4">
+                        <i class="bi bi-envelope-paper-fill display-4 mb-3"></i>
+                        <h3 class="fw-bold">Ready to Book Your Session?</h3>
+                        <p class="mb-4 opacity-75">Contact Fatima directly or browse our gallery to find your perfect design.</p>
+                        <div class="d-flex flex-wrap justify-content-center gap-3">
+                            <a href="#gallery" class="btn btn-light btn-lg px-4">
+                                <i class="bi bi-images me-2"></i>View Gallery
+                            </a>
+                            <a href="tel:+2341234567890" class="btn btn-outline-light btn-lg px-4">
+                                <i class="bi bi-telephone-fill me-2"></i>Call Now
+                            </a>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-7">
-                    <span class="text-uppercase text-muted fw-bold" style="letter-spacing: 2px; font-size:0.7rem;">The Artist</span>
-                    <h2 class="section-title-left mt-1">Fatima Rabiu</h2>
-                    <p class="mt-3 text-secondary" style="line-height:1.7; font-size:0.95rem;">
-                        Welcome to <strong>Baby Henna</strong> — I’m Fatima, a henna artist dedicated to transforming body art into timeless statements. From delicate lines to bold bridal packages, every pattern is hand-drawn to complement your style for weddings, Eid, or any special moment.
-                    </p>
-                    <p class="text-secondary" style="line-height:1.7; font-size:0.95rem;">
-                        We use organic, skin-safe pastes for rich, lasting stains. Browse the gallery, pick your favourite design, and book your session with ease.
-                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ===== MODAL ===== -->
+    <!-- ===== ORDER MODAL ===== -->
     <div class="modal fade" id="orderModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0">
                 <div class="modal-header text-white">
-                    <h5 class="modal-title fw-bold w-100 text-center" id="modalDesignTitle">Book Design</h5>
+                    <h5 class="modal-title fw-bold w-100 text-center" id="modalDesignTitle">
+                        <i class="bi bi-calendar-check me-2"></i>Book Your Design
+                    </h5>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
-                    <div class="text-center mb-3">
-                        <img src="" id="modalDesignImg" class="img-fluid rounded" alt="design preview" />
+                <div class="modal-body p-4">
+                    <div class="row g-4">
+                        <div class="col-md-5 text-center">
+                            <img src="" id="modalDesignImg" class="img-fluid rounded-3 shadow-sm" alt="design preview" style="max-height: 250px; width: 100%; object-fit: cover;" />
+                            <p class="text-muted small mt-2">Selected Design Preview</p>
+                        </div>
+                        <div class="col-md-7">
+                            <form id="orderForm">
+                                <div class="mb-3">
+                                    <label class="form-label fw-semibold">Selected Design</label>
+                                    <input type="text" class="form-control bg-light" id="selectedDesignName" readonly />
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label fw-semibold"><i class="bi bi-person me-1"></i>Your Full Name</label>
+                                    <input type="text" class="form-control" id="clientName" placeholder="Enter your name" required />
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label fw-semibold"><i class="bi bi-phone me-1"></i>Phone Number</label>
+                                    <input type="tel" class="form-control" id="clientPhone" placeholder="e.g. +234..." required />
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label fw-semibold"><i class="bi bi-geo-alt me-1"></i>Delivery / Service Address</label>
+                                    <textarea class="form-control" id="clientAddress" rows="3" placeholder="Provide your full address details here" required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-custom w-100 py-2 fw-bold">
+                                    <i class="bi bi-send me-2"></i>Submit Booking Request
+                                </button>
+                            </form>
+                        </div>
                     </div>
-                    <form id="orderForm">
-                        <div class="mb-3">
-                            <label class="form-label fw-bold small text-secondary">Design</label>
-                            <input type="text" class="form-control bg-light" id="selectedDesignName" readonly style="font-weight:500;" />
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label fw-bold small text-secondary">Full Name</label>
-                            <input type="text" class="form-control" id="clientName" placeholder="Your name" required />
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label fw-bold small text-secondary">Phone</label>
-                            <input type="tel" class="form-control" id="clientPhone" placeholder="e.g. +234..." required />
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label fw-bold small text-secondary">Address / appointment</label>
-                            <textarea class="form-control" id="clientAddress" rows="3" placeholder="Full address or location" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-custom w-100 py-2 fw-bold">Submit booking</button>
-                    </form>
                 </div>
             </div>
         </div>
     </div>
 
     <!-- ===== FOOTER ===== -->
-    <footer class="text-white text-center">
+    <footer class="text-white py-5">
         <div class="container">
-            <p class="mb-1 fw-bold" style="font-family:'Playfair Display',serif;">Baby Henna <i class="bi bi-suit-heart-fill" style="color:var(--accent-color);"></i></p>
-            <p class="small text-muted mb-0" style="color: rgba(255,255,255,0.6) !important;">&copy; 2026 · crafted for Fatima Rabiu</p>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <h5 class="fw-bold mb-3" style="font-family:'Playfair Display',serif;">
+                        <i class="bi bi-flower2 me-2" style="color:var(--accent-color);"></i>Baby Henna
+                    </h5>
+                    <p class="opacity-75" style="font-size:0.95rem;">
+                        Beautiful henna artistry by Fatima Rabiu. Creating timeless body art for every special occasion.
+                    </p>
+                    <div class="social-links mt-3">
+                        <a href="#" class="text-white me-2"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-white me-2"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-white me-2"><i class="bi bi-whatsapp"></i></a>
+                        <a href="#" class="text-white"><i class="bi bi-pinterest"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h6 class="fw-bold mb-3">Quick Links</h6>
+                    <ul class="list-unstyled opacity-75">
+                        <li class="mb-2"><a href="#home" class="text-white text-decoration-none">Home</a></li>
+                        <li class="mb-2"><a href="#gallery" class="text-white text-decoration-none">Gallery</a></li>
+                        <li class="mb-2"><a href="#about" class="text-white text-decoration-none">About Fatima</a></li>
+                        <li class="mb-2"><a href="#contact" class="text-white text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h6 class="fw-bold mb-3">Contact Info</h6>
+                    <ul class="list-unstyled opacity-75">
+                        <li class="mb-2"><i class="bi bi-telephone me-2"></i>+234 123 4567 890</li>
+                        <li class="mb-2"><i class="bi bi-envelope me-2"></i>fatima@babyhenna.com</li>
+                        <li class="mb-2"><i class="bi bi-geo-alt me-2"></i>Lagos, Nigeria</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="border-light opacity-25" />
+            <div class="text-center">
+                <p class="opacity-50 small mb-0">
+                    <i class="bi bi-c-circle me-1"></i>2026 Baby Henna. Crafted beautifully for Fatima Rabiu. All rights reserved.
+                </p>
+            </div>
         </div>
     </footer>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- ===== JAVASCRIPT FOR MODAL & ORDER ===== -->
     <script>
+        // Initialize tooltips
+        document.addEventListener('DOMContentLoaded', function() {
+            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+            tooltipTriggerList.map(function(tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl);
+            });
+        });
+
         let bootstrapModal;
 
         function openOrderModal(designName, imgSrc) {
-            document.getElementById('modalDesignTitle').innerText = 'Book ' + designName;
+            document.getElementById('modalDesignTitle').innerHTML = '<i class="bi bi-calendar-check me-2"></i>Book ' + designName;
             document.getElementById('selectedDesignName').value = designName;
             document.getElementById('modalDesignImg').src = imgSrc;
-            bootstrapModal = new bootstrap.Modal(document.getElementById('orderModal'));
-            bootstrapModal.show();
+            
+            // If modal exists, show it
+            if (bootstrapModal) {
+                bootstrapModal.show();
+            } else {
+                bootstrapModal = new bootstrap.Modal(document.getElementById('orderModal'));
+                bootstrapModal.show();
+            }
         }
 
+        // Handle form submission
         document.getElementById('orderForm').addEventListener('submit', function(e) {
             e.preventDefault();
+            
             const design = document.getElementById('selectedDesignName').value;
             const name = document.getElementById('clientName').value;
             const phone = document.getElementById('clientPhone').value;
             const address = document.getElementById('clientAddress').value;
-            alert(`✨ Thank you, ${name}!\nYour booking for "${design}" is registered.\nPhone: ${phone}\nAddress: ${address}\nFatima will reach out shortly.`);
+
+            // Show success message with a beautiful alert
+            const successMessage = `
+                ✨ Thank you, ${name}! ✨\n\n
+                Your booking for "${design}" has been registered successfully!\n\n
+                📞 Phone: ${phone}\n
+                📍 Address: ${address}\n\n
+                Fatima will contact you shortly to confirm your session.
+            `;
+            
+            alert(successMessage);
+            
+            // Reset form
             document.getElementById('orderForm').reset();
-            bootstrapModal.hide();
+            
+            // Hide modal
+            if (bootstrapModal) {
+                bootstrapModal.hide();
+            }
+        });
+
+        // Close modal with escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && bootstrapModal) {
+                bootstrapModal.hide();
+            }
         });
     </script>
 </body>
